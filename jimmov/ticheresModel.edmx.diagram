@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="73056479660947d7b6278079e55b7fe3" Name="Diagram1">
+        <EntityTypeShape EntityType="FlightsModel.Coin" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FlightsModel.Country" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FlightsModel.file" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FlightsModel.FlightInfor" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FlightsModel.Information" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FlightsModel.LoginUser" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FlightsModel.Matach" Width="1.5" PointX="9.875" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FlightsModel.TypeInfo" Width="1.5" PointX="6" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FlightsModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FlightsModel.FK__Informatio__Coin__09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="FlightsModel.FK__FlightInf__ToPli__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="FlightsModel.FK__FlightInfo__From__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="FlightsModel.FK__Informati__count__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="FlightsModel.FK__files__intInfor__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="FlightsModel.FK__FlightInf__IdUse__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="FlightsModel.FK__Informati__IdFli__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="FlightsModel.FK__Informati__IdTyp__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="FlightsModel.FK__LoginUser__UserI__7F2BE32F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

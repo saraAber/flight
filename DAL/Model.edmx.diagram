@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6e6a4a2bae534ee281ab58219cb408c2" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="FlightsModel.Matach" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FlightsModel.Coin" Width="1.5" PointX="6" PointY="8.625" />
+        <EntityTypeShape EntityType="FlightsModel.Country" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="FlightsModel.file" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="FlightsModel.FlightInfor" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="FlightsModel.Information" Width="1.5" PointX="8.25" PointY="5.5" />
+        <EntityTypeShape EntityType="FlightsModel.LoginUser" Width="1.5" PointX="3" PointY="1.875" />
+        <EntityTypeShape EntityType="FlightsModel.TypeInfo" Width="1.5" PointX="6" PointY="2.25" />
+        <EntityTypeShape EntityType="FlightsModel.User" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="FlightsModel.FK__Informatio__Coin__09A971A2" />
+        <AssociationConnector Association="FlightsModel.FK__FlightInf__ToPli__03F0984C" />
+        <AssociationConnector Association="FlightsModel.FK__FlightInfo__From__02FC7413" />
+        <AssociationConnector Association="FlightsModel.FK__Informati__count__08B54D69" />
+        <AssociationConnector Association="FlightsModel.FK__files__intInfor__0C85DE4D" />
+        <AssociationConnector Association="FlightsModel.FK__FlightInf__IdUse__02084FDA" />
+        <AssociationConnector Association="FlightsModel.FK__Informati__IdFli__06CD04F7" />
+        <AssociationConnector Association="FlightsModel.FK__Informati__IdTyp__07C12930" />
+        <AssociationConnector Association="FlightsModel.FK__LoginUser__UserI__7F2BE32F" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

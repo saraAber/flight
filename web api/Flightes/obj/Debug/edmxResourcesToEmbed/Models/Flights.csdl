@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FlightsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Coin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nameValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Information" Relationship="Self.FK__Informatio__Coin__35BCFE0A" FromRole="Coin" ToRole="Information" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FlightInfor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="From" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ToPlice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TZUser" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BackDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Dates" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK__FlightInf__IdUse__30F848ED" FromRole="FlightInfor" ToRole="User" />
+    <NavigationProperty Name="Information" Relationship="Self.FK__Informati__IdFli__33D4B598" FromRole="FlightInfor" ToRole="Information" />
+  </EntityType>
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdFlight" Type="Int32" Nullable="false" />
+    <Property Name="IdType" Type="Int32" Nullable="false" />
+    <Property Name="Cost" Type="Double" Nullable="false" />
+    <Property Name="Plice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WhoPay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Coin" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Coin1" Relationship="Self.FK__Informatio__Coin__35BCFE0A" FromRole="Information" ToRole="Coin" />
+    <NavigationProperty Name="FlightInfor" Relationship="Self.FK__Informati__IdFli__33D4B598" FromRole="Information" ToRole="FlightInfor" />
+    <NavigationProperty Name="TypeInfo" Relationship="Self.FK__Informati__IdTyp__34C8D9D1" FromRole="Information" ToRole="TypeInfo" />
+  </EntityType>
+  <EntityType Name="LoginUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="LoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="User" Relationship="Self.FK__LoginUser__UserI__2E1BDC42" FromRole="LoginUser" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Matach">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Uro" Type="Double" />
+    <Property Name="Usa" Type="Double" />
+    <Property Name="Shach" Type="Double" />
+  </EntityType>
+  <EntityType Name="TypeInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Information" Relationship="Self.FK__Informati__IdTyp__34C8D9D1" FromRole="TypeInfo" ToRole="Information" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fhon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LoginDate" Type="DateTime" Precision="3" />
+    <Property Name="EditDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="FlightInfor" Relationship="Self.FK__FlightInf__IdUse__30F848ED" FromRole="User" ToRole="FlightInfor" />
+    <NavigationProperty Name="LoginUser" Relationship="Self.FK__LoginUser__UserI__2E1BDC42" FromRole="User" ToRole="LoginUser" />
+  </EntityType>
+  <Association Name="FK__Informatio__Coin__35BCFE0A">
+    <End Role="Coin" Type="Self.Coin" Multiplicity="1" />
+    <End Role="Information" Type="Self.Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Information">
+        <PropertyRef Name="Coin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FlightInf__IdUse__30F848ED">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="FlightInfor" Type="Self.FlightInfor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FlightInfor">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Informati__IdFli__33D4B598">
+    <End Role="FlightInfor" Type="Self.FlightInfor" Multiplicity="1" />
+    <End Role="Information" Type="Self.Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FlightInfor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Information">
+        <PropertyRef Name="IdFlight" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Informati__IdTyp__34C8D9D1">
+    <End Role="TypeInfo" Type="Self.TypeInfo" Multiplicity="1" />
+    <End Role="Information" Type="Self.Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Information">
+        <PropertyRef Name="IdType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoginUser__UserI__2E1BDC42">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="LoginUser" Type="Self.LoginUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LoginUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FlightsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Coin" EntityType="Self.Coin" />
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="FlightInfor" EntityType="Self.FlightInfor" />
+    <EntitySet Name="Information" EntityType="Self.Information" />
+    <EntitySet Name="LoginUser" EntityType="Self.LoginUser" />
+    <EntitySet Name="Matach" EntityType="Self.Matach" />
+    <EntitySet Name="TypeInfo" EntityType="Self.TypeInfo" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK__Informatio__Coin__35BCFE0A" Association="Self.FK__Informatio__Coin__35BCFE0A">
+      <End Role="Coin" EntitySet="Coin" />
+      <End Role="Information" EntitySet="Information" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FlightInf__IdUse__30F848ED" Association="Self.FK__FlightInf__IdUse__30F848ED">
+      <End Role="User" EntitySet="User" />
+      <End Role="FlightInfor" EntitySet="FlightInfor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Informati__IdFli__33D4B598" Association="Self.FK__Informati__IdFli__33D4B598">
+      <End Role="FlightInfor" EntitySet="FlightInfor" />
+      <End Role="Information" EntitySet="Information" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Informati__IdTyp__34C8D9D1" Association="Self.FK__Informati__IdTyp__34C8D9D1">
+      <End Role="TypeInfo" EntitySet="TypeInfo" />
+      <End Role="Information" EntitySet="Information" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoginUser__UserI__2E1BDC42" Association="Self.FK__LoginUser__UserI__2E1BDC42">
+      <End Role="User" EntitySet="User" />
+      <End Role="LoginUser" EntitySet="LoginUser" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

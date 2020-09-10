@@ -1,0 +1,10 @@
+D:\web api\DTO\bin\Debug\DTO.dll
+D:\web api\DTO\bin\Debug\DTO.pdb
+D:\web api\DTO\obj\Debug\DTO.dll
+D:\web api\DTO\obj\Debug\DTO.pdb
+D:\web api\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\Flights\web api\DTO\bin\Debug\DTO.dll
+D:\Flights\web api\DTO\bin\Debug\DTO.pdb
+D:\Flights\web api\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\Flights\web api\DTO\obj\Debug\DTO.dll
+D:\Flights\web api\DTO\obj\Debug\DTO.pdb

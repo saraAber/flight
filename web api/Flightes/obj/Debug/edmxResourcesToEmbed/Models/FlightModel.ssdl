@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FlightsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Coin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="nameValue" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="CountryValue" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FlightInfor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUser" Type="int" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="From" Type="varchar" MaxLength="50" />
+    <Property Name="ToPlice" Type="varchar" MaxLength="50" />
+    <Property Name="TZUser" Type="varchar" MaxLength="9" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="BackDate" Type="datetime" Nullable="false" />
+    <Property Name="Dates" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdFlight" Type="int" Nullable="false" />
+    <Property Name="IdType" Type="int" Nullable="false" />
+    <Property Name="Cost" Type="float" Nullable="false" />
+    <Property Name="Plice" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WhoPay" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Coin" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoginUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="LoginDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Matach">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Uro" Type="float" />
+    <Property Name="Usa" Type="float" />
+    <Property Name="Shach" Type="float" />
+  </EntityType>
+  <EntityType Name="TypeInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Fhon" Type="varchar" MaxLength="50" />
+    <Property Name="LoginDate" Type="datetime" />
+    <Property Name="EditDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__FlightInf__IdUse__30F848ED">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="FlightInfor" Type="Self.FlightInfor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FlightInfor">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Informati__IdFli__33D4B598">
+    <End Role="FlightInfor" Type="Self.FlightInfor" Multiplicity="1" />
+    <End Role="Information" Type="Self.Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FlightInfor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Information">
+        <PropertyRef Name="IdFlight" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Informati__IdTyp__34C8D9D1">
+    <End Role="TypeInfo" Type="Self.TypeInfo" Multiplicity="1" />
+    <End Role="Information" Type="Self.Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Information">
+        <PropertyRef Name="IdType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Informatio__Coin__35BCFE0A">
+    <End Role="Coin" Type="Self.Coin" Multiplicity="1" />
+    <End Role="Information" Type="Self.Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Information">
+        <PropertyRef Name="Coin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LoginUser__UserI__2E1BDC42">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="LoginUser" Type="Self.LoginUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LoginUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FlightsModelStoreContainer">
+    <EntitySet Name="Coin" EntityType="Self.Coin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FlightInfor" EntityType="Self.FlightInfor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Information" EntityType="Self.Information" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginUser" EntityType="Self.LoginUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Matach" EntityType="Self.Matach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeInfo" EntityType="Self.TypeInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__FlightInf__IdUse__30F848ED" Association="Self.FK__FlightInf__IdUse__30F848ED">
+      <End Role="User" EntitySet="User" />
+      <End Role="FlightInfor" EntitySet="FlightInfor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Informati__IdFli__33D4B598" Association="Self.FK__Informati__IdFli__33D4B598">
+      <End Role="FlightInfor" EntitySet="FlightInfor" />
+      <End Role="Information" EntitySet="Information" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Informati__IdTyp__34C8D9D1" Association="Self.FK__Informati__IdTyp__34C8D9D1">
+      <End Role="TypeInfo" EntitySet="TypeInfo" />
+      <End Role="Information" EntitySet="Information" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Informatio__Coin__35BCFE0A" Association="Self.FK__Informatio__Coin__35BCFE0A">
+      <End Role="Coin" EntitySet="Coin" />
+      <End Role="Information" EntitySet="Information" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LoginUser__UserI__2E1BDC42" Association="Self.FK__LoginUser__UserI__2E1BDC42">
+      <End Role="User" EntitySet="User" />
+      <End Role="LoginUser" EntitySet="LoginUser" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

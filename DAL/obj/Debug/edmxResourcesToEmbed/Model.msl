@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FlightsModelStoreContainer" CdmEntityContainer="FlightsEntities">
+    <EntitySetMapping Name="Matach">
+      <EntityTypeMapping TypeName="FlightsModel.Matach">
+        <MappingFragment StoreEntitySet="Matach">
+          <ScalarProperty Name="Shach" ColumnName="Shach" />
+          <ScalarProperty Name="Usa" ColumnName="Usa" />
+          <ScalarProperty Name="Uro" ColumnName="Uro" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coins">
+      <EntityTypeMapping TypeName="FlightsModel.Coin">
+        <MappingFragment StoreEntitySet="Coin">
+          <ScalarProperty Name="nameValue" ColumnName="nameValue" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="FlightsModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryValue" ColumnName="CountryValue" />
+          <ScalarProperty Name="Country1" ColumnName="Country" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="files">
+      <EntityTypeMapping TypeName="FlightsModel.file">
+        <MappingFragment StoreEntitySet="files">
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Pathname" ColumnName="Pathname" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="intInfor" ColumnName="intInfor" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FlightInfors">
+      <EntityTypeMapping TypeName="FlightsModel.FlightInfor">
+        <MappingFragment StoreEntitySet="FlightInfor">
+          <ScalarProperty Name="Dates" ColumnName="Dates" />
+          <ScalarProperty Name="BackDate" ColumnName="BackDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="TZUser" ColumnName="TZUser" />
+          <ScalarProperty Name="ToPlice" ColumnName="ToPlice" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Information">
+      <EntityTypeMapping TypeName="FlightsModel.Information">
+        <MappingFragment StoreEntitySet="Information">
+          <ScalarProperty Name="Pya" ColumnName="Pya" />
+          <ScalarProperty Name="Coin" ColumnName="Coin" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="countryId" ColumnName="countryId" />
+          <ScalarProperty Name="WhoPay" ColumnName="WhoPay" />
+          <ScalarProperty Name="IdType" ColumnName="IdType" />
+          <ScalarProperty Name="IdFlight" ColumnName="IdFlight" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginUsers">
+      <EntityTypeMapping TypeName="FlightsModel.LoginUser">
+        <MappingFragment StoreEntitySet="LoginUser">
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeInfoes">
+      <EntityTypeMapping TypeName="FlightsModel.TypeInfo">
+        <MappingFragment StoreEntitySet="TypeInfo">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="FlightsModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="Fhon" ColumnName="Fhon" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
